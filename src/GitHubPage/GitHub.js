@@ -14,7 +14,7 @@ const GitHub = () => {
         setSearchedUser(res.data);
       })
       .catch((m) => {
-        console.log;
+        console.log(m);
       });
   };
 
