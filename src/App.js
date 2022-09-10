@@ -18,12 +18,12 @@ export default function App() {
           <Route path="/news" component={News} />
           <Route path="/" exact component={ToDo} />
           {/* <Route path="/" exact component={ToDo} /> */}
-          {/* <Route
+          <Route
             path="/news-card/:id"
             render={(props) => (
               <NewsCardDetail {...props} nekiState={nekiState} />
             )}
-          /> */}
+          />
         </Switch>
       </BrowserRouter>
     </div>

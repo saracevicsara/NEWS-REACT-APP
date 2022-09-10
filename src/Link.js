@@ -16,3 +16,4 @@ const Link = ({ href, children }) => {
     </a>
   );
 };
+export default Link
