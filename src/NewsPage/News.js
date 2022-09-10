@@ -30,7 +30,7 @@ export default function News() {
       sx={{ marginTop: "40px" }}
     >
       {news.map((n, i) => (
-        <Grid xs="auto">
+        <Grid item xs="auto">
           <Link to={{ pathname: "/news-card/" + i, state: n }}>
             <NewsCard data={n} />
           </Link>

@@ -5,6 +5,7 @@ import Header from "./Header";
 import NewsCardDetail from "./NewsCardDetail/NewsCardDetail";
 import News from "./NewsPage/News";
 import ToDo from "./ToDo/ToDo";
+import "./App.css";
 
 export default function App() {
   const [nekiState, setNekiState] = useState("Ovo smo poslali");
