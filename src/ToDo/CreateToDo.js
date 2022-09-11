@@ -1,7 +1,7 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import { useRef, useState } from "react";
 
-const CreateToDo = ({ handleAdd }) => {
+const CreateToDo = ({ handleAdd, language }) => {
   const [toDoObj, setToDoObj] = useState({
     name: "",
     description: "",
@@ -11,7 +11,7 @@ const CreateToDo = ({ handleAdd }) => {
   const handleOnChange = (value, inputType) => {
     setToDoObj({ ...toDoObj, [inputType]: value });
   };
-
+  const isEnglishSelected = () => language === "English";
   return (
     <Grid
       container
@@ -21,7 +21,7 @@ const CreateToDo = ({ handleAdd }) => {
     >
       <Grid item xs={6}>
         <Typography variant="h4" component="h2">
-          Create ToDo Item
+          {isEnglishSelected() ? "Create ToDo Item" : "Schaffen ToDo Aufgabe"}
         </Typography>
       </Grid>
       <Grid item xs={6}>
@@ -40,7 +40,7 @@ const CreateToDo = ({ handleAdd }) => {
             handleOnChange(event.target.value, "description")
           }
           id="standard-basic"
-          label="Description"
+          label={isEnglishSelected() ? "Description" : "Bezeichnung"}
           variant="standard"
         />
       </Grid>
@@ -49,7 +49,7 @@ const CreateToDo = ({ handleAdd }) => {
           value={toDoObj.date}
           onChange={(event) => handleOnChange(event.target.value, "date")}
           id="standard-basic"
-          label="Date"
+          label={isEnglishSelected() ? "Date" : "Datum"}
           variant="standard"
         />
       </Grid>
@@ -61,7 +61,7 @@ const CreateToDo = ({ handleAdd }) => {
           }}
           variant="filled"
         >
-          Add Task
+          {isEnglishSelected() ? "Add Task" : "Aufgabe Hinzufügen"}
         </Button>
       </Grid>
     </Grid>
