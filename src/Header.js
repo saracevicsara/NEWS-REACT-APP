@@ -25,7 +25,7 @@ const Header = ({ changeLanguage }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            SatroLogo
+            SARA
           </Typography>
           <Button color="inherit">
             <Link style={{ color: "white" }} to="/">

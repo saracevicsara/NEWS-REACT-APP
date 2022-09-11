@@ -2,9 +2,11 @@ import { TextField, Grid, Button } from "@mui/material";
 import DisplayCard from "./DisplayCard";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+
 const url = "https://api.github.com/users/";
+
 const GitHub = () => {
-  const inputRef = useRef;
+  const inputRef = useRef();
   const [searchedUser, setSearchedUser] = useState(null);
 
   const fetchUser = (user = "saracevicsara") => {
@@ -13,9 +15,7 @@ const GitHub = () => {
       .then((res) => {
         setSearchedUser(res.data);
       })
-      .catch((m) => {
-        console.log(m);
-      });
+      .catch((m) => console.log);
   };
 
   useEffect(() => {
@@ -25,6 +25,7 @@ const GitHub = () => {
   const changeUser = () => {
     fetchUser(inputRef.current.value);
   };
+
   return (
     <Grid
       container
